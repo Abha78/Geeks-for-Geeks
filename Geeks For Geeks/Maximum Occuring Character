@@ -1,0 +1,37 @@
+class Solution
+{
+    //Function to find the maximum occurring character in a string.
+    public static char getMaxOccuringChar(String line)
+    {
+        // Your code here
+        String al ="abcdefghijklmnopqrstuvwxyz";
+        
+        int[] f =new int[26];
+        
+        for(int i=0;i<line.length();i++)
+        {
+            f[line.charAt(i)-'a']++;
+        }
+        
+        int max =0;
+        
+        int c=0;
+        
+        char ans=' ';
+        
+        for(int i=0;i<f.length;i++)
+        {
+            c=Math.max(c,f[i]);
+            if(c>max)
+            {
+                 max=c;
+                 ans = al.charAt(i);
+            }
+        }
+        return ans;
+    }
+    
+}
+        
+    
+    
