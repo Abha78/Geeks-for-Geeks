@@ -1,0 +1,19 @@
+class Solution {
+    void pushZerosToEnd(int[] arr, int n) {
+        // code here
+        
+        int left=0;
+        int temp;
+        if(n==0 || n==1){
+            return;
+        }
+        for(int right =0 ; right<n; right++){
+            if(arr[right]!=0){
+                temp = arr[right];
+                arr[right]=arr[left];
+                arr[left] = temp;
+                left++;
+            }
+        }
+    }
+}
