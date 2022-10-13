@@ -1,0 +1,24 @@
+class Solution
+{
+	public int peakElement(int[] arr,int n)
+    {
+       //add code here.
+       if(arr.length==0) return 0;
+         
+       int start =0;
+       int end = n-1;
+       
+       while(start<end){
+           
+           int mid = (start+end)/2;
+           if(arr[mid]<arr[mid+1]){
+               start=mid+1;
+           }
+           else{
+               end=mid;
+               }
+         //  int mid = ((start)+(end-start))/2;
+       }
+       return end;
+    }
+}
