@@ -1,0 +1,79 @@
+class Solution
+{
+    void merge(int arr[], int l, int m, int r)
+    {
+         // Your code here
+          int mid = (l+r)/2;
+         int len1 = mid-l+1;
+         int len2 = r-m;
+         int[] arr1 = new int[len1];
+         int[] arr2 = new int[len2];
+         
+         //copy elements in arr1
+         
+         int originalArrayIndex = l;
+         for(int i=0; i<len1; i++){
+             arr1[i] = arr[originalArrayIndex];
+             originalArrayIndex++;
+             
+         }
+         // copy elements in arr2;
+         
+         for(int i=0 ; i<len2 ;i++){
+             arr2[i] = arr[originalArrayIndex];
+             originalArrayIndex++;
+             
+         }
+         originalArrayIndex = l;
+         int idx1=0;
+         int idx2=0;
+         while(idx1<len1 && idx2 <len2){
+             if(arr1[idx1]<arr2[idx2]){
+             arr[originalArrayIndex]=arr1[idx1];
+             idx1++;
+             originalArrayIndex++;
+         }
+         else{
+             arr[originalArrayIndex]=arr2[idx2];
+              idx2++;
+             originalArrayIndex++;
+             
+         }
+         }
+         //if only arr1 is left
+         while(idx1<len1){
+             arr[originalArrayIndex]=arr1[idx1];
+              idx1++;
+             originalArrayIndex++;
+         }
+         
+         //if only arr2 is left
+         while(idx2<len2){
+              arr[originalArrayIndex]=arr2[idx2];
+              idx2++;
+             originalArrayIndex++;
+         }
+             
+         }
+             
+             
+         
+         
+    void mergeSort(int arr[], int l, int r)
+    
+    {
+        if(l>=r){
+            return;
+        }
+       int  mid = (l+r)/2;
+        //left part
+        mergeSort(arr,l,mid);
+        //for right part
+        mergeSort(arr,mid+1 , r);
+        merge( arr,  l,  mid ,  r);
+    }
+    
+        
+        //code here
+    
+}
