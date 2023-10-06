@@ -1,0 +1,14 @@
+class Solution {
+    static String conRevstr(String S1, String S2) {
+        // code here 
+        String cont = S1+S2;
+        int n = cont.length()-1;
+        
+        String ans = "";
+        
+        for(int i =n ; i>=0 ; i--){
+            ans = ans+cont.charAt(i);
+        }
+        return ans ;
+    }
+}
