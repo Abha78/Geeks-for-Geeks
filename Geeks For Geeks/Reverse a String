@@ -1,0 +1,14 @@
+class Solution {
+    static String revStr(String S) {
+        // code here 
+        
+        String rev="";
+        int n = S.length()-1;
+        for(int i =n; i>=0 ; i--){
+            rev = rev+S.charAt(i);
+            
+            
+        }
+        return rev;
+    }
+}
