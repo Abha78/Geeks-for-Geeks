@@ -1,0 +1,30 @@
+class Solution {
+    int isDigitSumPalindrome(int N) {
+       
+int sum =0 ;
+int digit=0;
+// int result = N;
+int ans=0;
+while(N!=0){
+  digit = N%10;
+  sum = sum + digit;
+  N = N/10;
+  
+}
+
+int num = sum; 
+while(num!=0){
+    int digit2 = num%10;
+    ans = (ans*10)+digit2;
+    num = num/10;
+}
+if(sum==ans ){
+    return 1;
+}
+else{
+    return 0;
+}
+//return -1;
+}
+
+} 
