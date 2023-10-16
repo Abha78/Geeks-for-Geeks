@@ -1,0 +1,23 @@
+class Solution{
+    static ArrayList<Integer> getSum(int N){
+        // code here 
+       // ArrayList<Integer>ans = new ArrayList<Integer>();
+    int sum =0 ;
+    int even =0;
+    int odd =0;
+    
+    for(int i =1 ; i<=N ; i++){
+        if(i%2==0){
+            even = i+even;
+        }
+        else {
+            odd = i+odd;
+        }
+    }
+     ArrayList<Integer>ans = new ArrayList<Integer>();
+        ans.add(even);
+        ans.add(odd);
+    
+    return ans;
+    }
+}
