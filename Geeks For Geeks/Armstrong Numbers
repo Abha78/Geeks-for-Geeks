@@ -1,0 +1,21 @@
+class Solution {
+    static String armstrongNumber(int n){
+        // code here 
+        
+        int sum =0 ;
+        int num = n ;
+        int rev =0;
+        while(num!=0){
+            
+            rev = num%10;
+            sum = sum+(rev*rev*rev);
+            num =num/10;
+        }
+        if(sum == n){
+            return "Yes";
+        }
+        else{
+            return "No";
+        }
+    }
+}
